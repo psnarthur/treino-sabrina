@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Treino — Painel de Volume 💗</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Treino">
+<meta name="theme-color" content="#fdf2f6">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACcUlEQVR4nO3cwU3DMABAUUCsUMGJZViCEVmCZZiEAzfgh8SqlQTeu1ZqXPvjpEnF7ePD5QZ+crf3ADgucZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRyk+9kHeH1+qpde3t5nH/1v2GsO5+4cC5/q11f5tOMcToxjzbj1sWzfOZwVx/oR66PsPodT4tg6Vn18d4Q59G2FJA6SOEjj9zlcKBzN1W+HDO4cyjiXsfUaiUMZZzSwapvjUMZ5bV07F6QkcZDEQRIHSRwkcZDEQRIHSRwkcZCm//p8JXflD8jOQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZCO8uDNv4D64ghPIu0cJHGQxEESB0kcJHGQxEESB0kcJHGQNsfhPvd5bV27kZ1DH2c0sGqDpxV9nMvYeo0/lV043hGeKP5DV/+LdUFKEgdJHKQpcWw9+bm8/e4Iczhr51g/VmWU3edw4mllzYiVsWzfOZx7zbE8bmWsseMc3j4+XOa9O6fm2wpJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRB+gA8dVcCKEkv7QAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACcUlEQVR4nO3cwU3DMABAUUCsUMGJZViCEVmCZZiEAzfgh8SqlQTeu1ZqXPvjpEnF7ePD5QZ+crf3ADgucZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRyk+9kHeH1+qpde3t5nH/1v2GsO5+4cC5/q11f5tOMcToxjzbj1sWzfOZwVx/oR66PsPodT4tg6Vn18d4Q59G2FJA6SOEjj9zlcKBzN1W+HDO4cyjiXsfUaiUMZZzSwapvjUMZ5bV07F6QkcZDEQRIHSRwkcZDEQRIHSRwkcZCm//p8JXflD8jOQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZCO8uDNv4D64ghPIu0cJHGQxEESB0kcJHGQxEESB0kcJHGQNsfhPvd5bV27kZ1DH2c0sGqDpxV9nMvYeo0/lV043hGeKP5DV/+LdUFKEgdJHKQpcWw9+bm8/e4Iczhr51g/VmWU3edw4mllzYiVsWzfOZx7zbE8bmWsseMc3j4+XOa9O6fm2wpJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRB+gA8dVcCKEkv7QAAAABJRU5ErkJggg==">
+<style>
+  :root{
+    --bg:#fdf2f6;
+    --surface:#ffffff;
+    --surface-2:#fbe6ee;
+    --border:#f3c8da;
+    --border-soft:#f8dfe9;
+    --text:#4a3540;
+    --text-mute:#8d7482;
+    --text-faint:#c2a3b3;
+    --rust:#ef6fa8;
+    --rust-dim:#cdeaf9;
+    --steel:#2f7ea8;
+    --olive:#5fae82;
+    --gold:#c98d2c;
+    --brick:#d9707f;
+    --tip-bg:#eaf6fc;
+    --tip-border:#bfe3f5;
+    --tip-text:#2f6f8f;
+    --radius:14px;
+    font-family:-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);}
+  .app{max-width:760px;margin:0 auto;padding:20px 16px 60px;}
+  h1,h2,h3{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;text-transform:uppercase;letter-spacing:0.03em;margin:0;font-weight:600;}
+  .eyebrow{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--rust);margin:0 0 4px;}
+  header{border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:18px;}
+  header h1{font-size:24px;color:var(--text);}
+  header p{color:var(--text-mute);font-size:13px;margin:6px 0 0;}
+  .meso{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:10px 12px;box-shadow:0 1px 3px rgba(154,90,120,0.06);}
+  .meso label{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:var(--text-mute);}
+  .meso select{background:var(--surface-2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;}
+  .meso-note{font-size:12px;color:var(--text-mute);margin:8px 0 0;line-height:1.5;}
+  nav.tabs{display:flex;gap:2px;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:3px;margin-bottom:18px;box-shadow:0 1px 3px rgba(154,90,120,0.06);}
+  nav.tabs button{flex:1;background:transparent;border:none;color:var(--text-mute);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;text-transform:uppercase;letter-spacing:0.04em;font-size:13px;padding:9px 6px;border-radius:7px;cursor:pointer;}
+  nav.tabs button.active{background:var(--rust);color:#3a1930;font-weight:600;}
+  section{display:none;}
+  section.active{display:block;}
+  .motivation-banner{background:linear-gradient(120deg,#fde3ee,#e2f2fb);border:1px solid var(--border-soft);border-radius:var(--radius);padding:14px 16px;margin-bottom:16px;font-style:italic;font-size:14px;color:var(--text);text-align:center;line-height:1.5;box-shadow:0 1px 4px rgba(154,90,120,0.08);}
+  .daybar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+  .daybar button{flex:1;min-width:70px;background:var(--surface);border:1px solid var(--border-soft);color:var(--text-mute);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;padding:10px;border-radius:var(--radius);cursor:pointer;}
+  .daybar button.active{border-color:var(--steel);color:#1c5f80;background:var(--rust-dim);font-weight:600;}
+  .exercise{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(154,90,120,0.06);}
+  .exercise-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .exercise-name{font-size:15px;font-weight:600;}
+  .exercise-meta{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:var(--text-mute);margin-top:2px;}
+  .tag{display:inline-block;background:var(--surface-2);color:var(--steel);border-radius:4px;padding:1px 6px;font-size:10px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;margin-right:5px;}
+  .icon-btn{background:transparent;border:1px solid var(--border);color:var(--text-faint);border-radius:6px;width:26px;height:26px;cursor:pointer;font-size:14px;line-height:1;}
+  .icon-btn:hover{color:var(--brick);border-color:var(--brick);}
+  .adhd-tip{background:var(--tip-bg);border:1px dashed var(--tip-border);color:var(--tip-text);font-size:11px;padding:6px 9px;border-radius:8px;margin-top:9px;line-height:1.4;}
+  .sets{margin-top:10px;display:flex;flex-direction:column;gap:6px;}
+  .set-row{display:grid;grid-template-columns:26px 1fr 1fr auto;gap:8px;align-items:center;}
+  .set-row span{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;color:var(--text-faint);}
+  .set-row input{background:var(--surface-2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:11px 8px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:16px;width:100%;min-height:44px;}
+  .set-row input::placeholder{color:var(--text-faint);font-size:13px;}
+  .set-row button{background:transparent;border:none;color:var(--text-faint);cursor:pointer;font-size:15px;}
+  .set-row button:hover{color:var(--brick);}
+  .exercise-actions{display:flex;gap:8px;margin-top:10px;}
+  .exercise-actions button{background:var(--surface-2);border:1px solid var(--border);color:var(--text-mute);border-radius:6px;padding:6px 10px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:11px;cursor:pointer;}
+  .exercise-actions button:hover{color:var(--rust);border-color:var(--rust);}
+  .add-exercise{border:1px dashed var(--border);border-radius:var(--radius);padding:12px;text-align:center;color:var(--text-mute);cursor:pointer;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;margin-bottom:16px;}
+  .add-exercise:hover{border-color:var(--rust);color:var(--rust);}
+  .add-form{background:var(--surface);border:1px solid var(--rust);border-radius:var(--radius);padding:12px;margin-bottom:16px;display:none;flex-direction:column;gap:8px;}
+  .add-form.open{display:flex;}
+  .add-form input,.add-form select{background:var(--surface-2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px 8px;font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:16px;min-height:44px;}
+  .add-form .row{display:flex;gap:8px;}
+  .add-form .row>*{flex:1;}
+  .primary-btn{background:linear-gradient(135deg,#ef6fa8,#5fb0e0);color:#ffffff;border:none;border-radius:8px;padding:12px;font-family:-apple-system,'Segoe UI',Roboto,sans-serif;text-transform:uppercase;letter-spacing:0.04em;font-size:14px;font-weight:600;cursor:pointer;width:100%;}
+  .primary-btn:hover{background:linear-gradient(135deg,#e85a9a,#4aa0d6);}
+  .ghost-btn{background:transparent;color:var(--text-mute);border:1px solid var(--border);border-radius:8px;padding:10px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;cursor:pointer;}
+  .save-bar{margin-top:6px;display:flex;flex-direction:column;gap:8px;}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--olive);color:#132118;padding:12px 20px;border-radius:10px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:50;max-width:88%;text-align:center;line-height:1.5;box-shadow:0 4px 14px rgba(0,0,0,0.15);}
+  .toast.show{opacity:1;}
+  .zone-row{display:grid;grid-template-columns:110px 1fr 58px;gap:10px;align-items:center;margin-bottom:14px;}
+  .zone-label{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:13px;letter-spacing:0.02em;text-transform:uppercase;}
+  .zone-track{position:relative;height:20px;background:var(--surface-2);border-radius:5px;overflow:hidden;border:1px solid var(--border-soft);}
+  .zone-band{position:absolute;top:0;bottom:0;background:rgba(95,174,130,0.18);border-left:1px solid var(--olive);border-right:1px solid var(--olive);}
+  .zone-fill{position:absolute;top:0;bottom:0;left:0;background:var(--rust);opacity:0.85;}
+  .zone-count{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;text-align:right;color:var(--text-mute);}
+  .legend{display:flex;gap:16px;font-size:11px;color:var(--text-mute);font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;margin-bottom:16px;flex-wrap:wrap;}
+  .legend span{display:inline-flex;align-items:center;gap:5px;}
+  .legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+  .card{background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(154,90,120,0.06);}
+  .card h3{font-size:13px;color:var(--text-mute);margin-bottom:10px;}
+  .session-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-soft);font-size:13px;}
+  .session-row:last-child{border-bottom:none;}
+  .session-date{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;color:var(--text);}
+  .session-meta{color:var(--text-mute);font-size:12px;}
+  select.exercise-picker{width:100%;background:var(--surface-2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:8px;font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:13px;margin-bottom:10px;}
+  .empty{color:var(--text-faint);font-size:13px;text-align:center;padding:20px 0;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;}
+  .src-note{font-size:11px;color:var(--text-faint);margin-top:22px;line-height:1.6;border-top:1px solid var(--border-soft);padding-top:12px;}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <p class="eyebrow">Superior / Inferior 2x — 4 dias + 2 corridas</p>
+    <h1>Painel de treino e volume</h1>
+    <p>Registre séries, repetições e carga. O painel calcula seu volume semanal por grupo muscular contra a faixa-alvo baseada em evidência. Ênfase em ombro e dorsal, com distribuição harmônica no restante.</p>
+    <div class="meso">
+      <label for="mesoCycle">Mesociclo</label>
+      <select id="mesoCycle"></select>
+      <label for="mesoWeek">Semana</label>
+      <select id="mesoWeek"></select>
+    </div>
+    <p class="meso-note" id="mesoNote"></p>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="treino" class="active">Treino</button>
+    <button data-tab="volume">Volume</button>
+    <button data-tab="historico">Histórico</button>
+  </nav>
+
+  <section id="tab-treino" class="active">
+    <p class="eyebrow">✨ Frase do dia</p>
+    <div class="motivation-banner" id="motivationBanner"></div>
+    <div class="daybar" id="dayBar"></div>
+    <div id="exerciseList"></div>
+    <div class="add-exercise" id="addExerciseToggle">+ Adicionar exercício a este dia</div>
+    <div class="add-form" id="addForm">
+      <div class="row">
+        <input type="text" id="newExName" placeholder="Nome do exercício">
+        <select id="newExMuscle"></select>
+      </div>
+      <div class="row">
+        <input type="text" id="newExReps" placeholder="Faixa de reps (ex: 8-12)">
+        <input type="number" id="newExSets" placeholder="Séries iniciais" value="3" min="1" max="8">
+      </div>
+      <div class="row">
+        <button class="primary-btn" id="confirmAddEx" style="flex:1;">Adicionar</button>
+        <button class="ghost-btn" id="cancelAddEx" style="flex:1;">Cancelar</button>
+      </div>
+    </div>
+    <div class="save-bar">
+      <button class="primary-btn" id="saveSession">Salvar treino de hoje</button>
+      <span class="empty" id="saveHint" style="padding:0;"></span>
+    </div>
+  </section>
+
+  <section id="tab-volume">
+    <p class="eyebrow">Semana atual</p>
+    <h2 style="margin-bottom:14px;">Séries por grupo muscular</h2>
+    <div class="legend">
+      <span><i style="background:rgba(95,174,130,0.5);border:1px solid var(--olive);"></i>Faixa-alvo (MEV–MRV)</span>
+      <span><i style="background:var(--rust);"></i>Séries registradas</span>
+    </div>
+    <div id="zoneList"></div>
+    <div class="src-note">Montado em cima dos aparelhos disponiveis: Smith, cross over, banco de supino, extensora, flexora, abdutora e adutora. Sem elevacao pelvica (dificuldade de montar a barra) - gluteo coberto por abdutora, coice na polia e RDL no Smith. Divisao superior/inferior 2x por semana: ombros e costas priorizados (10-16 series/sem), demais grupos em faixa harmonica. Series fixas em 3 por exercicio (Krieger 2010); progressao do mesociclo via carga/RPE. Quadriceps e panturrilha recebem estimulo extra dos 2 dias de corrida.</div>
+  </section>
+
+  <section id="tab-historico">
+    <div class="card">
+      <h3>Progressão de carga por exercício</h3>
+      <select class="exercise-picker" id="chartExercisePicker"></select>
+      <svg id="loadChart" viewBox="0 0 640 200" style="width:100%;height:auto;"></svg>
+    </div>
+    <div class="card">
+      <h3>Volume semanal — grupo muscular</h3>
+      <select class="exercise-picker" id="chartMusclePicker"></select>
+      <svg id="volumeChart" viewBox="0 0 640 200" style="width:100%;height:auto;"></svg>
+    </div>
+    <div class="card">
+      <h3>Sessões registradas</h3>
+      <div id="sessionList"></div>
+    </div>
+    <div class="card">
+      <h3>Backup do histórico</h3>
+      <p style="font-size:12px;color:var(--text-mute);margin:0 0 4px;line-height:1.5;">Salve seu histórico num arquivo de vez em quando (uma vez por semana já basta). Se o celular limpar os dados do app, é só restaurar o último backup e você não perde nada.</p>
+      <p style="font-size:12px;color:var(--text-mute);margin:0 0 12px;line-height:1.5;">Ao baixar, escolha <b>"Salvar em Arquivos"</b> ou envie pra você mesma (e-mail / WhatsApp). Guarde sempre o mais recente.</p>
+      <button class="primary-btn" id="backupBtn" style="margin-bottom:10px;">⬇  Baixar backup (.json)</button>
+      <label class="ghost-btn" for="restoreFile" style="display:block;text-align:center;padding:11px;cursor:pointer;">↩  Restaurar de um arquivo</label>
+      <input type="file" id="restoreFile" accept="application/json,.json" style="display:none;">
+      <p style="font-size:11px;color:var(--text-faint);margin:10px 0 0;line-height:1.5;">Restaurar substitui os dados atuais do app pelos do arquivo.</p>
+      <details style="margin-top:16px;border-top:1px solid var(--border-soft);padding-top:12px;">
+        <summary style="font-size:12px;color:var(--text-faint);cursor:pointer;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;">Opções avançadas — copiar/colar texto</summary>
+        <p style="font-size:12px;color:var(--text-mute);margin:12px 0 8px;">Exportar como texto (pra colar numa conversa com o Claude ou em outro lugar seguro):</p>
+        <button class="ghost-btn" id="exportBtn" style="width:100%;margin-bottom:8px;">Exportar como texto</button>
+        <textarea id="exportBox" readonly style="display:none;width:100%;min-height:120px;background:var(--surface-2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:8px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;margin-bottom:8px;"></textarea>
+        <button class="ghost-btn" id="copyExportBtn" style="display:none;width:100%;margin-bottom:14px;">Copiar</button>
+        <p style="font-size:12px;color:var(--text-mute);margin:14px 0 8px;">Importar colando texto:</p>
+        <textarea id="importBox" placeholder="Cole aqui o texto exportado..." style="width:100%;min-height:100px;background:var(--surface-2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:8px;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;margin-bottom:8px;"></textarea>
+        <button class="ghost-btn" id="importBtn" style="width:100%;">Importar do texto</button>
+      </details>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+const STORAGE_KEY = 'hipertrofia-noiva-v1';
+
+const MUSCLES = ['Ombros','Costas','Peito','Biceps','Triceps','Quadriceps','Posterior de coxa','Gluteos','Adutores','Panturrilha','Abdomen'];
+
+const TARGETS = {
+  'Ombros':[10,16],'Costas':[10,16],'Peito':[7,12],'Biceps':[5,10],'Triceps':[5,10],
+  'Quadriceps':[7,12],'Posterior de coxa':[6,12],'Gluteos':[5,10],'Adutores':[0,6],
+  'Panturrilha':[4,9],'Abdomen':[4,9]
+};
+
+const PRIORITY = {'Ombros':'alta','Costas':'alta','Peito':'media','Biceps':'media','Triceps':'media','Quadriceps':'media','Posterior de coxa':'media','Gluteos':'media','Adutores':'leve','Panturrilha':'leve','Abdomen':'leve'};
+
+const DEFAULT_PROGRAM = {
+  SA: [
+    {id:'sa1', name:'Desenvolvimento com halteres (sentado)', muscle:'Ombros', reps:'8-12', sets:3, type:'Composto'},
+    {id:'sa2', name:'Puxada alta no cross over (polia alta)', muscle:'Costas', reps:'8-12', sets:3, type:'Composto'},
+    {id:'sa3', name:'Remada curvada no Smith', muscle:'Costas', reps:'8-12', sets:3, type:'Composto'},
+    {id:'sa4', name:'Supino reto (banco de supino)', muscle:'Peito', reps:'6-10', sets:3, type:'Composto'},
+    {id:'sa5', name:'Elevacao lateral no cross over (polia baixa)', muscle:'Ombros', reps:'12-15', sets:3, type:'Isolado'},
+    {id:'sa6', name:'Rosca no cross over (polia baixa)', muscle:'Biceps', reps:'8-12', sets:3, type:'Isolado', technique:'Superset com triceps na polia'},
+    {id:'sa7', name:'Triceps na polia (corda ou barra)', muscle:'Triceps', reps:'10-15', sets:3, type:'Isolado', technique:'Superset com rosca no cross over'}
+  ],
+  IA: [
+    {id:'ia1', name:'Agachamento no Smith', muscle:'Quadriceps', reps:'6-10', sets:3, type:'Composto'},
+    {id:'ia2', name:'Levantamento terra romeno no Smith', muscle:'Posterior de coxa', reps:'8-12', sets:3, type:'Composto'},
+    {id:'ia3', name:'Cadeira extensora', muscle:'Quadriceps', reps:'12-15', sets:3, type:'Isolado', technique:'Superset com cadeira flexora'},
+    {id:'ia4', name:'Cadeira flexora', muscle:'Posterior de coxa', reps:'10-15', sets:3, type:'Isolado', technique:'Superset com cadeira extensora'},
+    {id:'ia5', name:'Panturrilha no Smith', muscle:'Panturrilha', reps:'12-20', sets:3, type:'Isolado'},
+    {id:'ia6', name:'Prancha / prancha lateral', muscle:'Abdomen', reps:'30-60s', sets:3, type:'Isolado'}
+  ],
+  SB: [
+    {id:'sb1', name:'Desenvolvimento Arnold (halteres)', muscle:'Ombros', reps:'8-12', sets:3, type:'Composto'},
+    {id:'sb2', name:'Remada baixa no cross over (pegada neutra)', muscle:'Costas', reps:'8-12', sets:3, type:'Composto'},
+    {id:'sb3', name:'Puxada no cross over (pegada aberta)', muscle:'Costas', reps:'10-15', sets:3, type:'Composto'},
+    {id:'sb4', name:'Supino inclinado (banco + halteres)', muscle:'Peito', reps:'8-12', sets:3, type:'Composto'},
+    {id:'sb5', name:'Crucifixo no cross over', muscle:'Peito', reps:'12-15', sets:3, type:'Isolado'},
+    {id:'sb6', name:'Face pull no cross over (polia alta)', muscle:'Ombros', reps:'12-20', sets:3, type:'Isolado'},
+    {id:'sb7', name:'Rosca martelo na corda (polia baixa)', muscle:'Biceps', reps:'10-15', sets:3, type:'Isolado', technique:'Superset com triceps frances'},
+    {id:'sb8', name:'Triceps frances na polia (acima da cabeca)', muscle:'Triceps', reps:'10-15', sets:3, type:'Isolado', technique:'Superset com rosca martelo'}
+  ],
+  IB: [
+    {id:'ib1', name:'Afundo / passada no Smith', muscle:'Quadriceps', reps:'10-12', sets:3, type:'Composto'},
+    {id:'ib2', name:'Cadeira flexora (unilateral)', muscle:'Posterior de coxa', reps:'12-15', sets:3, type:'Isolado'},
+    {id:'ib3', name:'Cadeira abdutora', muscle:'Gluteos', reps:'12-20', sets:3, type:'Isolado', technique:'Superset com cadeira adutora'},
+    {id:'ib4', name:'Coice de gluteo no cross over (caneleira)', muscle:'Gluteos', reps:'12-15', sets:3, type:'Isolado'},
+    {id:'ib5', name:'Cadeira adutora', muscle:'Adutores', reps:'12-20', sets:3, type:'Isolado', technique:'Superset com cadeira abdutora'},
+    {id:'ib6', name:'Panturrilha unilateral no Smith', muscle:'Panturrilha', reps:'12-20', sets:3, type:'Isolado'},
+    {id:'ib7', name:'Abdominal na polia alta', muscle:'Abdomen', reps:'12-20', sets:3, type:'Isolado'}
+  ]
+};
+
+const DAY_LABELS = {'SA':'Sup A','IA':'Inf A','SB':'Sup B','IB':'Inf B'};
+const DAY_FULL = {'SA':'Superior A — ombro + dorsal','IA':'Inferior A','SB':'Superior B — dorsal + ombro','IB':'Inferior B'};
+
+const MESO_NOTES = {
+  '1':'Semana 1 — piso do mesociclo. Séries fixas (não crescem por semana). Suba pouca carga, deixe 2-3 reps na reserva (RPE 7-8).',
+  '2':'Semana 2 — mesmas séries. Suba um pouco a carga em relação à semana 1, mantendo RPE 7-8.',
+  '3':'Semana 3 — mesmas séries. Carga mais próxima do seu limite atual, RPE 8.',
+  '4':'Semana 4 — mesmas séries, pico de intensidade. RPE 8-9 — a progressão do mesociclo é toda em carga (volume de carga sobe), o número de séries não muda.',
+  '5':'Semana 5 — deload: 1 série a menos por exercício (mínimo 2) e carga bem mais leve, RPE 5-6. Depois desta semana, avance o seletor "Mesociclo" e volte para Semana 1.'
+};
+
+// ---------- Frases de motivação ----------
+const PRE_QUOTES = [
+  'Você não precisa sentir vontade pra começar — a motivação geralmente aparece depois que você já está em movimento.',
+  'Comece pela ação mais fácil possível: vestir a roupa de treino. O resto vem em sequência.',
+  'Pequenos reforços positivos constroem grandes hábitos — hoje é mais um tijolo, não precisa ser perfeito.',
+  'Você está treinando o comportamento de aparecer. O resultado é consequência, não pré-requisito.',
+  'Se vier o pensamento "não tô com vontade", você pode simplesmente notar esse pensamento — e treinar mesmo assim.',
+  'Desconforto não é sinal de erro. É o preço normal de agir de acordo com o que você valoriza.',
+  'Ação comprometida não depende de estar inspirada. Depende de escolher, de novo, o que importa pra você.',
+  'Seus pensamentos de cansaço podem estar na sala com você — eles só não precisam dirigir o treino.',
+  'Você controla o esforço de hoje. O resultado final não está nas suas mãos agora — só a série está.',
+  'O obstáculo de hoje (cansaço, preguiça, tempo curto) é também o caminho. Treinar apesar dele é o treino de verdade.',
+  'Foque no que depende de você: aparecer, se esforçar, terminar. O resto, solte.',
+  'Quem age bem não espera se sentir bem pra agir. Age bem — e o resto segue.',
+  'Se o pensamento for "eu não vou dar conta", repare: é um pensamento, não um fato. Você já deu conta antes.',
+  'Trocar "eu tenho que treinar" por "eu escolho treinar" muda a experiência inteira do treino.',
+  'Pensamentos automáticos de desânimo passam. A ação de hoje fica registrada — no histórico e em você.',
+  'Cada treino é um experimento comportamental: você testa a crença de que "não vai conseguir" — e geralmente ela perde.',
+  'Você não precisa controlar como vai se sentir. Só precisa decidir o que vai fazer com as próximas séries.',
+  'Hoje, o compromisso é com o processo — não com se sentir animada o tempo todo.',
+  'Presença consistente vale mais que perfeição ocasional. Isso vale pro treino e pra vida.',
+  'Aparecer mesmo sem vontade é, ironicamente, o que mais fortalece a vontade da próxima vez.'
+];
+
+const POST_QUOTES = [
+  '✅ Reforço positivo registrado: você fez, e isso aumenta a chance de fazer de novo.',
+  '✅ Mais uma repetição do comportamento que você quer consolidar. É assim que hábito se constrói.',
+  '✅ Treino salvo — consistência é o que o cérebro mais reconhece. Você acabou de reforçar a próxima vez.',
+  '✅ Consequência registrada: esforço vira histórico, histórico vira identidade.',
+  '✅ Você agiu de acordo com o que valoriza, mesmo sem estar 100% a fim. Isso é força psicológica de verdade.',
+  '✅ O desconforto passou, a ação ficou. Você escolheu seus valores hoje.',
+  '✅ Não foi sobre se sentir bem o tempo todo — foi sobre fazer o que importa. Missão cumprida.',
+  '✅ Você fez a sua parte — o esforço estava sob seu controle, e você entregou.',
+  '✅ Disciplina também é liberdade: hoje você escolheu quem quer ser, não só como se sentia.',
+  '✅ Terminado. O que dependia de você, você cumpriu — o resto segue seu curso.',
+  '✅ Mais uma evidência contra o pensamento "eu não dou conta". A prática desmente ele de novo.',
+  '✅ Treino salvo — sua autoeficácia agradece: você provou pra si mesma que consegue.',
+  '✅ Cada treino concluído reescreve um pouco a crença de que você não é capaz.',
+  '✅ Feito. Descansa bem — o corpo e a mente mereceram essa pausa.',
+  '✅ Salvo no histórico — e também na sua confiança.',
+  '✅ Missão cumprida por hoje. Amanhã a gente escolhe de novo.',
+  '✅ Você apareceu, agiu e terminou. Isso já é vitória, independente de como se sentiu no meio do caminho.',
+  '✅ Registrado! Consistência é o que você está treinando aqui, além dos músculos.',
+  '✅ Boa! Cada treino salvo é um pequeno experimento provando que você consegue mais do que pensa.',
+  '✅ Concluído — e mais um tijolo na parede da sua constância.'
+];
+
+const REMINDER_TIPS = [
+  '💡 Reps fáceis? Sobe um pouco o peso.',
+  '💡 Bateu a meta de reps? Tenta +1 repetição.',
+  '💡 Compare com a última vez ali em cima ⬆️ e tenta superar.',
+  '💡 Progresso pequeno também é progresso.',
+  '💡 Sobrou fôlego na última série? Adiciona mais carga.',
+  '💡 Um pouquinho mais que semana passada já vale.'
+];
+
+function makeQuotePicker(list){
+  let bag = [];
+  let lastShown = null;
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+  function refill(){
+    bag = shuffle(list);
+    if(bag.length > 1 && bag[0] === lastShown){
+      const tmp = bag[0]; bag[0] = bag[1]; bag[1] = tmp;
+    }
+  }
+  return function next(){
+    if(bag.length === 0) refill();
+    const q = bag.shift();
+    lastShown = q;
+    return q;
+  };
+}
+const nextPreQuote = makeQuotePicker(PRE_QUOTES);
+const nextPostQuote = makeQuotePicker(POST_QUOTES);
+
+function hashStr(s){
+  let h = 0;
+  for(let i = 0; i < s.length; i++){ h = (h * 31 + s.charCodeAt(i)) | 0; }
+  return Math.abs(h);
+}
+
+function renderMotivation(){
+  const el = document.getElementById('motivationBanner');
+  if(el) el.textContent = nextPreQuote();
+}
+// ---------- fim frases ----------
+
+function setsForWeek(ex, week){
+  if(week === '5'){
+    return Math.max(2, ex.sets - 1);
+  }
+  return ex.sets;
+}
+
+function nextCycleNote(cycle){
+  const base = 'Novo mesociclo. Ponto de partida: use as cargas da semana 3-4 do ciclo anterior (não as da semana 1 antiga) — você está mais forte agora.';
+  if(cycle % 2 === 0){
+    return base + ' A cada 2 mesociclos, considere trocar 1-2 exercícios isolados por uma variação (mantenha os compostos fixos para acompanhar progressão de força).';
+  }
+  return base;
+}
+
+let state = null;
+let activeDay = 'SA';
+let activeTab = 'treino';
+let ui = {}; // ephemeral per-exercise editable set counts, keyed by exercise id (day-specific via program)
+
+function uid(){ return 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+function defaultState(){
+  return { program: JSON.parse(JSON.stringify(DEFAULT_PROGRAM)), sessions: [], mesoWeek: '1', mesoCycle: 1, removedIds: [], drafts: {SA:{}, IA:{}, SB:{}, IB:{}} };
+}
+
+function mergeProgram(storedProgram, removedIds){
+  const fresh = JSON.parse(JSON.stringify(DEFAULT_PROGRAM));
+  const removed = new Set(removedIds || []);
+  const isBuiltinId = (id) => /^(sa|ia|sb|ib)\d+$/.test(id);
+  ['SA','IA','SB','IB'].forEach(day=>{
+    fresh[day] = fresh[day].filter(e => !removed.has(e.id));
+  });
+  if(!storedProgram) return fresh;
+  ['SA','IA','SB','IB'].forEach(day=>{
+    const stored = storedProgram[day] || [];
+    const customExtras = stored.filter(e => !isBuiltinId(e.id));
+    fresh[day] = fresh[day].concat(customExtras);
+  });
+  return fresh;
+}
+
+async function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      const parsed = JSON.parse(raw);
+      state = Object.assign(defaultState(), parsed);
+      state.program = mergeProgram(parsed.program, state.removedIds);
+    } else {
+      state = defaultState();
+    }
+  } catch(e){
+    state = defaultState();
+  }
+}
+
+async function saveState(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch(e){
+    showToast('Não foi possível salvar. Armazenamento cheio ou bloqueado.');
+  }
+}
+
+function exportData(){
+  return JSON.stringify(state, null, 2);
+}
+
+async function importData(jsonText){
+  const parsed = JSON.parse(jsonText);
+  state = Object.assign(defaultState(), parsed);
+  state.program = mergeProgram(parsed.program, state.removedIds);
+  await saveState();
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._hideTimer);
+  t._hideTimer = setTimeout(()=>t.classList.remove('show'), 4200);
+}
+
+function isoWeekKey(dateStr){
+  const d = new Date(dateStr + 'T00:00:00');
+  const day = (d.getUTCDay() + 6) % 7;
+  d.setUTCDate(d.getUTCDate() - day + 3);
+  const firstThursday = new Date(Date.UTC(d.getUTCFullYear(),0,4));
+  const week = 1 + Math.round(((d - firstThursday) / 86400000 - 3 + ((firstThursday.getUTCDay()+6)%7)) / 7);
+  return d.getUTCFullYear() + '-W' + String(week).padStart(2,'0');
+}
+
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+function lastSetsForExercise(name){
+  for(let i = state.sessions.length - 1; i >= 0; i--){
+    const s = state.sessions[i];
+    const entry = s.entries.find(e => e.name === name);
+    if(entry && entry.sets.length) return entry.sets;
+  }
+  return null;
+}
+
+function renderTabs(){
+  document.querySelectorAll('nav.tabs button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.tab === activeTab);
+  });
+  ['treino','volume','historico'].forEach(t=>{
+    document.getElementById('tab-'+t).classList.toggle('active', t === activeTab);
+  });
+  if(activeTab === 'treino') renderMotivation();
+  if(activeTab === 'volume') renderVolume();
+  if(activeTab === 'historico') renderHistorico();
+}
+
+function renderMeso(){
+  const cycleSel = document.getElementById('mesoCycle');
+  cycleSel.innerHTML = '';
+  const maxCycle = Math.max(6, state.mesoCycle + 3);
+  for(let c = 1; c <= maxCycle; c++){
+    const o = document.createElement('option');
+    o.value = c; o.textContent = 'Ciclo ' + c;
+    if(c === state.mesoCycle) o.selected = true;
+    cycleSel.appendChild(o);
+  }
+
+  const sel = document.getElementById('mesoWeek');
+  sel.innerHTML = '';
+  ['1','2','3','4','5'].forEach(w=>{
+    const o = document.createElement('option');
+    o.value = w; o.textContent = 'Semana ' + w;
+    if(w === state.mesoWeek) o.selected = true;
+    sel.appendChild(o);
+  });
+
+  let note = MESO_NOTES[state.mesoWeek] || '';
+  if(state.mesoWeek === '1' && state.mesoCycle > 1){
+    note = nextCycleNote(state.mesoCycle) + ' ' + note;
+  }
+  document.getElementById('mesoNote').textContent = note;
+}
+
+function renderDayBar(){
+  const bar = document.getElementById('dayBar');
+  bar.innerHTML = '';
+  ['SA','IA','SB','IB'].forEach(d=>{
+    const btn = document.createElement('button');
+    btn.textContent = DAY_LABELS[d] || d;
+    if(d === activeDay) btn.classList.add('active');
+    btn.onclick = () => { activeDay = d; renderDayBar(); renderExercises(); };
+    bar.appendChild(btn);
+  });
+}
+
+function renderExercises(){
+  const list = document.getElementById('exerciseList');
+  list.innerHTML = '';
+  const exercises = state.program[activeDay];
+  exercises.forEach(ex=>{
+    const key = activeDay + '_' + ex.id;
+    if(!(key in ui)) ui[key] = setsForWeek(ex, state.mesoWeek);
+    const card = document.createElement('div');
+    card.className = 'exercise';
+
+    const head = document.createElement('div');
+    head.className = 'exercise-head';
+    const left = document.createElement('div');
+    left.innerHTML = '<div class="exercise-name">' + ex.name + '</div>' +
+      '<div class="exercise-meta"><span class="tag">' + ex.muscle + '</span><span class="tag">' + ex.type + '</span>reps alvo ' + ex.reps +
+        (ex.technique ? '<br><span class="tag" style="color:var(--gold);border-color:var(--gold);margin-top:4px;display:inline-block;">' + ex.technique + '</span>' : '') +
+        '<div class="adhd-tip">' + REMINDER_TIPS[hashStr(ex.id) % REMINDER_TIPS.length] + '</div>' +
+      '</div>';
+    const del = document.createElement('button');
+    del.className = 'icon-btn';
+    del.textContent = '×';
+    del.title = 'Remover exercício do programa';
+    del.onclick = () => {
+      state.program[activeDay] = state.program[activeDay].filter(e => e.id !== ex.id);
+      if(/^(sa|ia|sb|ib)\d+$/.test(ex.id)){
+        state.removedIds = state.removedIds || [];
+        if(!state.removedIds.includes(ex.id)) state.removedIds.push(ex.id);
+      }
+      saveState();
+      renderExercises();
+    };
+    head.appendChild(left);
+    head.appendChild(del);
+    card.appendChild(head);
+
+    const setsWrap = document.createElement('div');
+    setsWrap.className = 'sets';
+    const lastSets = lastSetsForExercise(ex.name);
+    if(!state.drafts) state.drafts = {SA:{}, IA:{}, SB:{}, IB:{}};
+    if(!state.drafts[activeDay]) state.drafts[activeDay] = {};
+    const draft = state.drafts[activeDay][ex.id] || [];
+    for(let i = 0; i < ui[key]; i++){
+      const row = document.createElement('div');
+      row.className = 'set-row';
+      const suggestReps = lastSets && lastSets[i] ? lastSets[i].reps : '';
+      const suggestLoad = lastSets && lastSets[i] ? lastSets[i].load : '';
+      const draftReps = draft[i] && draft[i].reps !== undefined && draft[i].reps !== '' ? draft[i].reps : '';
+      const draftLoad = draft[i] && draft[i].load !== undefined && draft[i].load !== '' ? draft[i].load : '';
+      row.innerHTML = '<span>' + (i+1) + '</span>' +
+        '<input type="number" inputmode="numeric" placeholder="reps ' + (suggestReps || '') + '" data-role="reps" min="0" value="' + draftReps + '">' +
+        '<input type="number" inputmode="decimal" placeholder="kg ' + (suggestLoad || '') + '" data-role="load" min="0" step="0.5" value="' + draftLoad + '">' +
+        '<button data-role="rm" title="Remover série">×</button>';
+      const saveRowDraft = () => {
+        const repsVal = row.querySelector('[data-role="reps"]').value;
+        const loadVal = row.querySelector('[data-role="load"]').value;
+        if(!state.drafts[activeDay][ex.id]) state.drafts[activeDay][ex.id] = [];
+        state.drafts[activeDay][ex.id][i] = { reps: repsVal, load: loadVal };
+        saveState();
+      };
+      row.querySelector('[data-role="reps"]').onchange = saveRowDraft;
+      row.querySelector('[data-role="load"]').onchange = saveRowDraft;
+      row.querySelector('[data-role="rm"]').onclick = () => {
+        ui[key] = Math.max(1, ui[key]-1);
+        renderExercises();
+      };
+      setsWrap.appendChild(row);
+    }
+    card.appendChild(setsWrap);
+
+    const actions = document.createElement('div');
+    actions.className = 'exercise-actions';
+    const addSet = document.createElement('button');
+    addSet.textContent = '+ Série';
+    addSet.onclick = () => { ui[key] = ui[key] + 1; renderExercises(); };
+    actions.appendChild(addSet);
+    card.appendChild(actions);
+
+    card.dataset.exId = ex.id;
+    list.appendChild(card);
+  });
+}
+
+function openAddForm(){
+  const sel = document.getElementById('newExMuscle');
+  sel.innerHTML = MUSCLES.map(m => '<option value="'+m+'">'+m+'</option>').join('');
+  document.getElementById('addForm').classList.add('open');
+}
+function closeAddForm(){
+  document.getElementById('addForm').classList.remove('open');
+  document.getElementById('newExName').value = '';
+  document.getElementById('newExReps').value = '';
+  document.getElementById('newExSets').value = '3';
+}
+
+function confirmAddExercise(){
+  const name = document.getElementById('newExName').value.trim();
+  const muscle = document.getElementById('newExMuscle').value;
+  const reps = document.getElementById('newExReps').value.trim() || '8-12';
+  const sets = Math.max(1, parseInt(document.getElementById('newExSets').value) || 3);
+  if(!name){ showToast('Digite o nome do exercício.'); return; }
+  state.program[activeDay].push({id: uid(), name, muscle, reps, sets, type:'Isolado'});
+  saveState();
+  closeAddForm();
+  renderExercises();
+}
+
+function saveSession(){
+  const entries = [];
+  document.querySelectorAll('#exerciseList .exercise').forEach(card=>{
+    const exId = card.dataset.exId;
+    const ex = state.program[activeDay].find(e => e.id === exId);
+    if(!ex) return;
+    const sets = [];
+    card.querySelectorAll('.set-row').forEach(row=>{
+      const reps = row.querySelector('[data-role="reps"]').value;
+      const load = row.querySelector('[data-role="load"]').value;
+      if(reps !== '' && load !== ''){
+        sets.push({reps: Number(reps), load: Number(load)});
+      }
+    });
+    if(sets.length){
+      entries.push({name: ex.name, muscle: ex.muscle, sets});
+    }
+  });
+  if(!entries.length){
+    document.getElementById('saveHint').textContent = 'Preencha ao menos uma série (reps + carga) antes de salvar.';
+    return;
+  }
+  state.sessions.push({id: uid(), date: todayStr(), day: activeDay, entries});
+  if(state.drafts) state.drafts[activeDay] = {};
+  saveState();
+  document.getElementById('saveHint').textContent = '';
+  showToast(nextPostQuote());
+  ui = {};
+  renderExercises();
+}
+
+function weeklySetsByMuscle(weekKey){
+  const totals = {};
+  MUSCLES.forEach(m => totals[m] = 0);
+  state.sessions.forEach(s=>{
+    if(isoWeekKey(s.date) !== weekKey) return;
+    s.entries.forEach(e=>{
+      if(totals[e.muscle] === undefined) totals[e.muscle] = 0;
+      totals[e.muscle] += e.sets.length;
+    });
+  });
+  return totals;
+}
+
+function renderVolume(){
+  const wk = isoWeekKey(todayStr());
+  const totals = weeklySetsByMuscle(wk);
+  const zoneList = document.getElementById('zoneList');
+  zoneList.innerHTML = '';
+  const maxScale = 24;
+  MUSCLES.forEach(m=>{
+    const [lo, hi] = TARGETS[m];
+    const count = totals[m] || 0;
+    const row = document.createElement('div');
+    row.className = 'zone-row';
+    const pct = v => Math.min(100, (v / maxScale) * 100);
+    let fillColor = 'var(--gold)';
+    if(count >= lo && count <= hi) fillColor = 'var(--olive)';
+    else if(count > hi) fillColor = 'var(--brick)';
+    else if(count === 0) fillColor = 'var(--text-faint)';
+    row.innerHTML =
+      '<span class="zone-label">' + m + '</span>' +
+      '<span class="zone-track">' +
+        '<span class="zone-band" style="left:' + pct(lo) + '%;width:' + (pct(hi)-pct(lo)) + '%;"></span>' +
+        '<span class="zone-fill" style="width:' + pct(count) + '%;background:' + fillColor + ';"></span>' +
+      '</span>' +
+      '<span class="zone-count">' + count + ' / ' + lo + '–' + hi + '</span>';
+    zoneList.appendChild(row);
+  });
+}
+
+function allExerciseNames(){
+  const names = new Set();
+  Object.values(state.program).forEach(list => list.forEach(e => names.add(e.name)));
+  state.sessions.forEach(s => s.entries.forEach(e => names.add(e.name)));
+  return Array.from(names).sort();
+}
+
+function drawLineChart(svgEl, points, labelFmt){
+  svgEl.innerHTML = '';
+  const w = 640, h = 200, padL = 40, padR = 16, padT = 16, padB = 28;
+  if(points.length < 1){
+    const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x', w/2); t.setAttribute('y', h/2); t.setAttribute('text-anchor','middle');
+    t.setAttribute('fill', '#a98b98'); t.setAttribute('font-size','13');
+    t.textContent = 'Sem dados ainda';
+    svgEl.appendChild(t);
+    return;
+  }
+  const vals = points.map(p => p.value);
+  const minV = Math.min(...vals, 0);
+  const maxV = Math.max(...vals, 1);
+  const range = (maxV - minV) || 1;
+  const stepX = points.length > 1 ? (w - padL - padR) / (points.length - 1) : 0;
+  const coords = points.map((p,i)=>{
+    const x = padL + stepX * i;
+    const y = padT + (1 - (p.value - minV) / range) * (h - padT - padB);
+    return {x, y, value: p.value, label: p.label};
+  });
+  for(let g = 0; g <= 3; g++){
+    const y = padT + (h - padT - padB) * (g/3);
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1', padL); line.setAttribute('x2', w - padR);
+    line.setAttribute('y1', y); line.setAttribute('y2', y);
+    line.setAttribute('stroke', '#f0d9e3'); line.setAttribute('stroke-width','1');
+    svgEl.appendChild(line);
+  }
+  const path = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  path.setAttribute('points', coords.map(c => c.x + ',' + c.y).join(' '));
+  path.setAttribute('fill','none'); path.setAttribute('stroke','#4fa8d8'); path.setAttribute('stroke-width','2');
+  svgEl.appendChild(path);
+  coords.forEach((c,i)=>{
+    const dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx', c.x); dot.setAttribute('cy', c.y); dot.setAttribute('r','3.5');
+    dot.setAttribute('fill', '#ef6fa8');
+    svgEl.appendChild(dot);
+    if(i === coords.length - 1 || i === 0 || points.length <= 6 || i % Math.ceil(points.length/6) === 0){
+      const lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
+      lbl.setAttribute('x', c.x); lbl.setAttribute('y', h - 8);
+      lbl.setAttribute('text-anchor','middle'); lbl.setAttribute('font-size','10');
+      lbl.setAttribute('fill','#a98b98');
+      lbl.textContent = c.label;
+      svgEl.appendChild(lbl);
+    }
+    const val = document.createElementNS('http://www.w3.org/2000/svg','text');
+    val.setAttribute('x', c.x); val.setAttribute('y', c.y - 8);
+    val.setAttribute('text-anchor','middle'); val.setAttribute('font-size','10');
+    val.setAttribute('fill','#4a3540');
+    val.textContent = labelFmt ? labelFmt(c.value) : c.value;
+    svgEl.appendChild(val);
+  });
+}
+
+function renderExercisePicker(){
+  const picker = document.getElementById('chartExercisePicker');
+  const names = allExerciseNames();
+  const prev = picker.value;
+  picker.innerHTML = names.map(n => '<option value="'+n+'">'+n+'</option>').join('');
+  if(names.includes(prev)) picker.value = prev;
+}
+
+function renderMusclePicker(){
+  const picker = document.getElementById('chartMusclePicker');
+  const prev = picker.value;
+  picker.innerHTML = MUSCLES.map(m => '<option value="'+m+'">'+m+'</option>').join('');
+  if(MUSCLES.includes(prev)) picker.value = prev;
+}
+
+function renderLoadChart(){
+  const picker = document.getElementById('chartExercisePicker');
+  const name = picker.value;
+  const points = [];
+  state.sessions.forEach(s=>{
+    const entry = s.entries.find(e => e.name === name);
+    if(entry && entry.sets.length){
+      const top = Math.max(...entry.sets.map(x => x.load));
+      points.push({value: top, label: s.date.slice(5)});
+    }
+  });
+  drawLineChart(document.getElementById('loadChart'), points, v => v + 'kg');
+}
+
+function renderVolumeChart(){
+  const picker = document.getElementById('chartMusclePicker');
+  const muscle = picker.value;
+  const weekMap = {};
+  state.sessions.forEach(s=>{
+    const wk = isoWeekKey(s.date);
+    if(!weekMap[wk]) weekMap[wk] = 0;
+    s.entries.forEach(e=>{
+      if(e.muscle === muscle) weekMap[wk] += e.sets.length;
+    });
+  });
+  const weeks = Object.keys(weekMap).sort();
+  const points = weeks.map(w => ({value: weekMap[w], label: w.slice(6)}));
+  drawLineChart(document.getElementById('volumeChart'), points, v => v);
+}
+
+function renderSessionList(){
+  const list = document.getElementById('sessionList');
+  if(!state.sessions.length){
+    list.innerHTML = '<div class="empty">Nenhuma sessão registrada ainda.</div>';
+    return;
+  }
+  list.innerHTML = '';
+  [...state.sessions].reverse().forEach(s=>{
+    const totalSets = s.entries.reduce((a,e)=>a+e.sets.length,0);
+    const tonnage = s.entries.reduce((a,e)=>a + e.sets.reduce((b,x)=>b + x.reps*x.load,0), 0);
+    const row = document.createElement('div');
+    row.className = 'session-row';
+    row.innerHTML = '<span class="session-date">' + s.date + ' · ' + (DAY_LABELS[s.day] || s.day) + '</span>' +
+      '<span class="session-meta">' + totalSets + ' séries · ' + Math.round(tonnage) + 'kg movidos</span>';
+    list.appendChild(row);
+  });
+}
+
+function renderHistorico(){
+  renderExercisePicker();
+  renderMusclePicker();
+  renderLoadChart();
+  renderVolumeChart();
+  renderSessionList();
+}
+
+function backupFilename(){
+  return 'treino-backup-' + todayStr() + '.json';
+}
+
+async function downloadBackup(){
+  const data = exportData();
+  const fname = backupFilename();
+  const blob = new Blob([data], {type:'application/json'});
+  try{
+    if(navigator.canShare){
+      const file = new File([blob], fname, {type:'application/json'});
+      if(navigator.canShare({files:[file]})){
+        await navigator.share({files:[file], title:'Backup do treino'});
+        return;
+      }
+    }
+  }catch(e){
+    if(e && e.name === 'AbortError') return;
+  }
+  try{
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fname;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 1500);
+    showToast('Backup gerado — salve o arquivo.');
+  }catch(e){
+    showToast('Não deu pra gerar o arquivo. Use as opções avançadas.');
+  }
+}
+
+async function restoreFromFile(input){
+  const f = input.files && input.files[0];
+  if(!f) return;
+  try{
+    const text = await f.text();
+    await importData(text);
+    showToast('Backup restaurado com sucesso!');
+    ui = {};
+    renderMeso();
+    renderDayBar();
+    renderExercises();
+    renderTabs();
+  }catch(e){
+    showToast('Arquivo inválido — confira se é um backup do app.');
+  }
+  input.value = '';
+}
+
+function wireEvents(){
+  document.querySelectorAll('nav.tabs button').forEach(b=>{
+    b.onclick = () => { activeTab = b.dataset.tab; renderTabs(); };
+  });
+  document.getElementById('mesoWeek').onchange = (e) => {
+    state.mesoWeek = e.target.value;
+    saveState();
+    ui = {};
+    renderMeso();
+    renderExercises();
+  };
+  document.getElementById('mesoCycle').onchange = (e) => {
+    state.mesoCycle = Number(e.target.value);
+    saveState();
+    renderMeso();
+  };
+  document.getElementById('addExerciseToggle').onclick = openAddForm;
+  document.getElementById('cancelAddEx').onclick = closeAddForm;
+  document.getElementById('confirmAddEx').onclick = confirmAddExercise;
+  document.getElementById('saveSession').onclick = saveSession;
+  document.getElementById('chartExercisePicker').onchange = renderLoadChart;
+  document.getElementById('chartMusclePicker').onchange = renderVolumeChart;
+
+  document.getElementById('backupBtn').onclick = downloadBackup;
+  document.getElementById('restoreFile').onchange = (e) => restoreFromFile(e.target);
+
+  document.getElementById('exportBtn').onclick = () => {
+    const box = document.getElementById('exportBox');
+    box.value = exportData();
+    box.style.display = 'block';
+    document.getElementById('copyExportBtn').style.display = 'block';
+    box.focus();
+    box.select();
+  };
+  document.getElementById('copyExportBtn').onclick = async () => {
+    const box = document.getElementById('exportBox');
+    box.select();
+    try{
+      await navigator.clipboard.writeText(box.value);
+      showToast('Copiado! Cole na conversa com o Claude.');
+    }catch(e){
+      showToast('Não deu pra copiar sozinho — selecione o texto e copie manualmente.');
+    }
+  };
+  document.getElementById('importBtn').onclick = async () => {
+    const text = document.getElementById('importBox').value.trim();
+    if(!text){ showToast('Cole o texto exportado antes de importar.'); return; }
+    try{
+      await importData(text);
+      showToast('Dados importados com sucesso!');
+      document.getElementById('importBox').value = '';
+      ui = {};
+      renderMeso();
+      renderDayBar();
+      renderExercises();
+      renderTabs();
+    }catch(e){
+      showToast('Texto inválido — confira se colou tudo certinho.');
+    }
+  };
+}
+
+(async function init(){
+  await loadState();
+  renderMeso();
+  renderDayBar();
+  renderExercises();
+  wireEvents();
+  renderTabs();
+})();
+</script>
+</body>
+</html>
